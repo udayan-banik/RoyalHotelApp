@@ -1,0 +1,91 @@
+<div
+  *ngIf="alert"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Success</strong> Data Submited.
+</div>
+
+<div
+  *ngIf="alerterror"
+  class="alert alert-danger alert-danger fade show"
+  role="alert"
+>
+  <strong>Data Not Submited</strong><br />
+  Please Check your input
+</div>
+
+<!-- <div
+  *ngIf="alert_authorize"
+  class="alert alert-danger alert-danger fade show"
+  role="alert"
+>
+  <strong>Not Authorized </strong> {{ error }}
+</div> -->
+
+<div class="form-froup row">
+  <label class="col-sm-2 col-form-label">Payment Card Number</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Payment_Card"
+      placeholder="Enter Card Number"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Card Holder Name</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Payment_Card_Holder_Name"
+      placeholder="Enter Name on Card"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Card Expiry</label>
+  <div class="col-sm-10">
+    <input
+      required
+      type=""
+      class="form-control"
+      placeholder="Enter Card in MM/YYYY"
+      />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Card CVV</label>
+  <div class="col-sm-10">
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Enter Card CVV"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Bill Id</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Bill_Id"
+      placeholder="Enter Bill Id"
+    />
+  </div>
+
+  <button
+    (click)="addPay()"
+    *ngIf="pay.Payment_Id == 0"
+    class="btn btn-primary"
+  >
+    Add
+  </button>
+
+  <button
+    (click)="updatePay()"
+    *ngIf="pay.Payment_Id != 0"
+    class="btn btn-primary"
+  >
+    Update
+  </button>
+</div>

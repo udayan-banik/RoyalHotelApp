@@ -1,0 +1,70 @@
+
+  <div class="container-fluid">
+    <div *ngIf="alert == false">
+      <!-- <h3 class="d-flex justify-content-center text-dark" >
+        Not Authorized for Access. Please Login to Access
+      </h3> -->
+      <app-login></app-login>
+      <!-- <a routerLink="" (click)="Logout()" class="m-1 btn btn-light" Button>
+        Back to login
+      </a> -->
+    </div>
+  
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-lg-start d-flex text-light"
+      *ngIf="alert == true">
+      <!-- <h3 class="justify-content-center">Royal Hotel</h3>
+      <span class="badge bg-warning text-dark">Manager</span> -->
+  
+      <button
+        routerLink="./"
+        class="justify-content-center btn btn-dark"
+        (click)="resetSPA()">
+        <h4>
+          Royal Hotel
+          <span class="badge bg-warning text-dark">Manager</span>
+        </h4>
+      </button>
+  
+      <div class="flex-grow-1">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button routerLink="room" class="m-1 btn btn-dark" Button
+            (click)="activateSPA()">
+              Rooms
+            </button>
+          </li>
+  
+          <li class="nav-item">
+            <button routerLink="reservation" class="m-1 btn btn-dark" Button
+            (click)="activateSPA()">
+              Reservations
+            </button>
+          </li>
+  
+          <li class="nav-item">
+            <button routerLink="receptionist" class="m-1 btn btn-dark" Button
+            (click)="activateSPA()">
+              All Receptionist
+            </button>
+          </li>
+        </ul>
+      </div>
+  
+      <span>
+        <!-- <span class="badge bg-danger text-light" *ngIf="alert == false"
+          >Not Logged In</span
+        > -->
+        <span class="badge bg-success text-light" *ngIf="alert == true"
+          >Logged in as {{ loggedType.toUpperCase() }}</span
+        >
+      </span>
+      <a routerLink="" (click)="Logout()" class="m-1 btn btn-dark" Button>
+        Logout
+      </a>
+    </nav>
+    <router-outlet></router-outlet>
+    <div *ngIf="btn_active == false">
+      <app-rooms></app-rooms>
+    </div>
+  </div>
+  

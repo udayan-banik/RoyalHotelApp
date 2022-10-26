@@ -1,0 +1,102 @@
+<div
+  *ngIf="alerterror"
+  class="alert alert-danger alert-danger fade show"
+  role="alert"
+>
+  <strong>Data Not Submited</strong><br />
+  Please Check your input
+</div>
+
+<div
+  *ngIf="alert"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Success</strong> Data Submited.
+</div>
+
+<!-- <div
+  *ngIf="alert_authorize"
+  class="alert alert-danger alert-danger fade show"
+  role="alert"
+>
+  <strong>Not Authorized </strong> {{ error }}
+</div> -->
+
+<div class="form-froup row">
+  <label class="col-sm-2 col-form-label">Guest Name</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Guest_Name"
+      placeholder="Enter Name"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Guest Email</label>
+  <div class="col-sm-10">
+    <input
+      type="email"
+      class="form-control"
+      [(ngModel)]="Guest_Email"
+      placeholder="Enter Email"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Guest Age</label>
+  <div class="col-sm-10">
+    <input
+      type="number"
+      class="form-control"
+      [(ngModel)]="Guest_Age"
+      placeholder="Enter Age"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Guest Phone Number</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Guest_Phone_Number"
+      placeholder="Enter Phone Number"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Guest Aadhar Id</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Guest_Aadhar_Id"
+      placeholder="Enter Aadhar Id"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Guest Address</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Guest_Address"
+      placeholder="Enter Guest Address"
+    />
+  </div>
+</div>
+
+<button
+  (click)="addGuest()"
+  *ngIf="guest.Guest_Id == 0"
+  class="btn btn-primary"
+>
+  Add
+</button>
+
+<button
+  (click)="updateGuest()"
+  *ngIf="guest.Guest_Id != 0"
+  class="btn btn-primary"
+>
+  Update
+</button>

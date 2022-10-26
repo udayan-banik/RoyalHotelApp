@@ -1,0 +1,19 @@
+<div class="table-responsive" *ngIf="isLogged == true">
+  <table class="table table-striped">
+    <tr>
+      <th>Room Id</th>
+      <th>Room Status</th>
+      <th>Room Comment</th>
+      <th>Room Inventory</th>
+      <th>Room Price</th>
+    </tr>
+
+    <tr *ngFor="let Dataitem of bookedRoomList; let i = index">
+      <td>{{ Dataitem.Room_Id }}</td>
+      <td>{{ Dataitem.Room_Status }}</td>
+      <td>{{ Dataitem.Room_Comment }}</td>
+      <td>{{ Dataitem.Room_Inventory }}</td>
+      <td>{{ Dataitem.Room_Price }}</td>
+    </tr>
+  </table>
+</div>

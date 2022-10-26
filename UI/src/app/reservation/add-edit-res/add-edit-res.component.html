@@ -1,0 +1,112 @@
+<div
+  *ngIf="alert"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Success</strong> Data Submited.
+</div>
+
+<div class="checkin alert alert-danger alert-danger fade show" *ngIf="Resevation_Check_In==null" >
+  Enter a valid Check-in date
+</div>
+<div class="guestid">
+
+</div>
+<div class="roomid">
+
+</div>
+<div
+  *ngIf="alerterror"
+  class="alert alert-danger alert-danger fade show"
+  role="alert"
+>
+  <strong>Data Not Submited</strong><br />
+  Please Check your input
+</div>
+
+<!-- <div
+  *ngIf="alert_authorize"
+  class="alert alert-danger alert-danger fade show"
+  role="alert"
+>
+  <strong>Not Authorized </strong> {{ error }}
+</div> -->
+
+<div class="form-froup row">
+  <label class="col-sm-2 col-form-label">Resevation Check In</label>
+  <div class="col-sm-10">
+    <input
+      type="date"
+      min="{{ currentDate | date: 'yyyy-MM-dd' }}"
+      class="form-control"
+      [(ngModel)]="Resevation_Check_In"
+      placeholder="Enter Check In"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Resevation Check Out</label>
+  <div class="col-sm-10">
+    <input
+      type="date"
+      min="{{ Resevation_Check_In | date: 'yyyy-MM-dd' }}"
+      class="form-control"
+      [(ngModel)]="Resevation_Check_Out"
+      placeholder="Enter Check Out"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Reservation No of Guests</label>
+  <div class="col-sm-10">
+    <input
+      type="number"
+      class="form-control"
+      [(ngModel)]="Reservation_No_of_Guests"
+      placeholder="Enter No of Guests"
+    />
+  </div>
+
+  <!-- <label class="col-sm-2 col-form-label" for="rs">Reservation Status</label>
+  <div class="col-sm-10">
+    <select
+      name="rs"
+      id="rs"
+      [(ngModel)]="Reservation_Status">
+      <option value="true">True</option>
+      <option value="false">False</option>
+    </select>
+  </div> -->
+
+  <label class="col-sm-2 col-form-label">Guest Id</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Guest_Id"
+      placeholder="Enter Guest Id"/>
+  </div>
+
+  <label class="col-sm-2 col-form-label">Room Id</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Room_Id"
+      placeholder="Enter Room Id"/>
+  </div>
+</div>
+
+<button
+  (click)="addReservation()"
+  *ngIf="reservation.Reservation_Id == 0"
+  class="btn btn-primary"
+>
+  Add
+</button>
+
+<button
+  (click)="updateReservation()"
+  *ngIf="reservation.Reservation_Id != 0"
+  class="btn btn-primary"
+>
+  Update
+</button>

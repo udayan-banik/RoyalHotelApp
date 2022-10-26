@@ -1,0 +1,53 @@
+.table-responsive{
+    align-content: center;
+    /* width: 75%; */
+    background-color:rgba(0,0,0,0.75);
+
+}
+
+.card{
+    align-content: center;
+    /* width: 75%; */
+    background-color:rgba(0,0,0,0.75);
+
+}
+.footer{
+    clear:both;
+    position: relative;
+    height: 200px;
+    /* margin-top: -200px; */
+}
+
+/* html, body {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    background: #252525;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    text-align: center;
+}
+body {
+    background: #363636;
+    border-left: 1px solid #111;
+    border-right: 1px solid #111;
+    margin: 0 75.5%;
+} */
+#container {
+    margin-bottom: 2em;
+    min-height: 100%;
+    overflow:auto;
+    padding: 0 2em;
+    text-align: justify;
+    /* height: 90%; */
+}
+/* #footer {
+    bottom: 0;
+    color: #707070;
+    height: 7em;
+    left: 0;
+    position: fixed;
+    font-size: small;
+    width:100%;
+} */

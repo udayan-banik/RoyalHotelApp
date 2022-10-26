@@ -1,0 +1,56 @@
+<div *ngIf="isLogged == true">
+  <div class="row">
+    <div  class="container-fluid col-4 mb-4 my-3" *ngFor="let Dataitem of unbookedRoomList">
+      <div class="card mb-3 text-white">
+        <div class="card-header">Room id: {{ Dataitem.Room_Id }}</div>
+          <div class="card-body">
+          <div class>
+            <h4 class="card-title">{{ Dataitem.Room_Comment }}</h4>
+            <p class="card-text">
+              Room Services: {{ Dataitem.Room_Inventory }}
+            </p>
+          </div>
+          <div class>
+            Price: ₹{{ Dataitem.Room_Price }}
+          <div>
+
+          </div>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="ReservationClick(Dataitem)">
+              Add Reservation
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+
+
+<!-- <div class="table-responsive">
+  <table class="table text-light">
+    <tr>
+      <th>Room Id</th>
+      <th>Room Status</th> -->
+      <!-- <th>Room Comment</th>
+      <th>Room Inventory</th>
+      <th>Room Price</th>
+    </tr>
+
+    <tr *ngFor="let Dataitem of unbookedRoomList; let i = index">
+      <td>{{ Dataitem.Room_Id }}</td> -->
+      <!-- <td>{{ Dataitem.Room_Status }}</td> -->
+      <!-- <td>{{ Dataitem.Room_Comment }}</td>
+      <td>{{ Dataitem.Room_Inventory }}</td>
+      <td>{{ Dataitem.Room_Price }}</td>
+      <td> -->
+        <!-- routerLink="/receptionists/guests" -->
+        <!-- <button (click)="ReservationClick(Dataitem)" class ="rounded leading-none font-bold" >
+          Add Reservation
+        </button>
+      </td>
+    </tr>
+  </table>
+</div> -->
+</div>

@@ -1,0 +1,75 @@
+<div
+  *ngIf="alert"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Success</strong> Data Submited.
+</div>
+
+<div
+  *ngIf="alerterror"
+  class="alert alert-danger alert-danger fade show"
+  role="alert"
+>
+  <strong>Data Not Submited</strong><br />
+  Please check your inputs
+</div>
+
+<!-- <div
+  *ngIf="alert_authorize"
+  class="alert alert-danger alert-danger fade show"
+  role="alert"
+>
+  <strong>Not Authorized </strong> {{ error }}
+</div> -->
+
+<div class="form-froup row">
+  <!-- <label class="col-sm-2 col-form-label">Room Status</label>
+  <div class="col-sm-10">
+    <select id="rs" name="status" [(ngModel)]="Room_Status">
+      <option value="true">true</option>
+      <option value="false">false</option>
+    </select>
+  </div> -->
+
+  <label class="col-sm-2 col-form-label">Room Type</label>
+  <div class="col-sm-10">
+    <select id="rt" name="room type" [(ngModel)]="Room_Comment">
+      <option value="VIP">VIP</option>
+      <option value="Suite">Suite</option>
+      <option value="Deluxe">Deluxe</option>
+    </select>
+  </div>
+
+  <label class="col-sm-2 col-form-label">Room Services</label>
+  <div class="col-sm-10">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="Room_Inventory"
+      placeholder="Enter Room Inventory"
+    />
+  </div>
+
+  <label class="col-sm-2 col-form-label">Room Price</label>
+  <div class="col-sm-10">
+    <input
+      type="number"
+      class="form-control"
+      [(ngModel)]="Room_Price"
+      placeholder="Enter Room Price"
+    />
+  </div>
+</div>
+
+<button (click)="addRoom()" *ngIf="room.Room_Id == 0" class="btn btn-primary">
+  Add
+</button>
+
+<button
+  (click)="updateRoom()"
+  *ngIf="room.Room_Id != 0"
+  class="btn btn-primary"
+>
+  Update
+</button>
