@@ -23,5 +23,6 @@ RoyalHotelApp is a full-stack Hotel Management System built with Angular 13 and 
   1. Payment Records (Search by Bill ID)
 
 # DEMO VIDEO
-1. ![DEMO]("Demo.gif")
-1. On YouTube(unlisted) - [Demo](https://youtu.be/YwoULX8NCw8)
+![DEMO](Demo.gif "demo video")
+
+## Also On YouTube(unlisted) - [Demo](https://youtu.be/YwoULX8NCw8)
